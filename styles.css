@@ -1,0 +1,671 @@
+/* Vi har i gruppen samarbejdet om koden igennem hele projektet. 
+ Vi har planlagt koden sammen og skrevet kode på en enkelt computer med delt skærm så alle kunne deltage. */
+
+/*-------------- styling af hele sitet --------------*/
+* {
+    margin: 0;
+    padding: 0;
+    text-decoration: none;
+    font-family: Athelas, serif;
+    color: #2D1F1A;
+    
+}
+
+/* https://codepen.io/Digitango/pen/eRRZaP */
+/* -------------- Animations --------------- */
+
+@keyframes fadeIn {
+    0% { opacity: 0; }
+    100% { opacity: 1; }
+  }
+
+  @keyframes slide-left {
+    from {
+      margin-top: 100%;
+    }
+ }
+
+    @keyframes slide-right {
+        from {
+          margin-left: 100%;
+        }
+ }
+
+body {
+    background-image: url("/img/background_img.png");
+}
+
+/*-------------- Parallax scrolling effect --------------*/
+.parallax_div {
+    background-image: url("/img/background_img.png");
+    min-height: 200px; 
+    background-attachment: fixed;
+  
+  }
+
+  /*-------------- Navigationsbar og styling af logo --------------*/
+  nav {
+    background-image: url("/img/background_img.png");
+    padding: 2% 0 2% 0;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    width: 100%;
+    position: fixed;
+   height: 50px;
+  }
+
+  #active_page {
+    text-decoration: underline;
+  }
+
+  .hamburger {
+    display: none;
+  }
+
+  .menu {
+    display: none;
+   
+  }
+
+  .menuItem {
+    display: block;
+    margin: 2rem 4rem;
+    font-size: 1.8rem;
+    color: #2D1F1A;
+    text-decoration: none;
+  }
+  
+  .menuItem:hover {
+    text-decoration: underline;
+  }
+
+  .menupunkt:hover {
+    text-decoration: underline;
+  }
+  
+  .hamburger {
+    position: fixed;
+    z-index: 100;
+    top: 1rem;
+    right: 1rem;
+    padding: 4px;
+    border: none;
+    background: white;
+    cursor: pointer;
+  }
+  
+  .closeIcon {
+    display: none;
+  }
+  
+  .menu {
+    position: fixed;
+    transform: translateY(-100%);
+    transition: transform 0.5s;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 99;
+    background: #c0ae9dc1;
+    /* background: #eddecf94; */
+    color: #2D1F1A;
+    list-style: none;
+    padding-top: 4rem;
+  }
+  
+  .showMenu {
+    transform: translateY(0);
+  }
+
+  /* ---------------- Styling af forside ------------------ */
+
+  #forside_landing {
+    display: flex;
+    background-color: #C0AE9D;
+    margin: 0 10% 0 10%;
+    padding: 4%;
+    animation: 1s slide-left;
+    
+  }
+
+  #forside_landing img {
+    width: 50%;
+  }
+
+  #forside_landing div {
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    text-align: center;
+  }
+
+  #video_placeholder {
+    margin: 0 10% 0 10%;
+    height: 600px;
+    background-image: url(/img/video_placeholder.png);
+    background-size: cover;
+    background-repeat: no-repeat;
+  }
+
+  .img_og_tekst-hoejre {
+    display: flex;
+    margin: 0 7% 0 7%;
+    animation: 1s slide-left;
+  }
+
+  .img_container {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    padding: 5%;
+  }
+
+  .text_box {
+    width: 60%;
+  }
+
+  .img_container_omMig {
+   width: 40%;
+  }
+
+  .img_container_omMig img {
+    width: 100%;
+  }
+
+  .img_container img {
+    width: 70%;
+  }
+
+  .btn_container {
+    margin-top: 5%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+   
+  }
+
+  video {
+    width: 80%;
+  }
+
+  .video_div {
+    display: flex;
+    justify-content: center;
+  }
+
+  .anbefalings_section {
+    display: flex;
+    align-items: center;
+    padding: 5%;
+    background-color: #DADBCB;
+  }
+
+  .anbefaling_profilbillede img {
+    display: none;
+  }
+
+  .anbefaling_profilbillede img:first-child {
+    display: block;
+  }
+
+  .anbefaling_profilbillede_reverse img {
+    display: none;
+  }
+
+  .anbefaling_profilbillede_reverse img:first-child {
+    display: block;
+  }
+
+ .anbefaling_profilbillede {
+    display: flex;
+    justify-content: center;
+    width: 50%;
+    padding: 2%;
+  }
+
+  .anbefalings_text {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 50%;
+    animation: fadeIn 5s;
+  }
+
+  .pil {
+    height: 20%;
+  }
+
+  #anbefaling_reverse {
+    flex-direction: row-reverse;
+  }
+
+  .anbefaling_profilbillede_reverse {
+    display: flex;
+    justify-content: center;
+    width: 50%;
+    
+  }
+
+  .kortholder {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #C0AE9D;
+    padding: 4% 10% 5% 10%;
+  }
+
+  .kort {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 29%;
+    height: 500px;
+    background-color: #EDE8E2;
+    justify-content: space-between;
+    text-align: center;
+  }
+
+  .kortholder .kort h4 {
+    padding: 3%;
+  }
+
+  .kortholder .kort h5 {
+    padding: 5%;
+  }
+
+  .kort img {
+    width: 100%;
+    margin-bottom: 10px;
+  }
+
+  .kort a {
+    font-size: 150%;
+  }
+
+
+.btn_kort {
+    background-color: #2D1F1A;
+    color: #DADBCB;
+    padding: 2% 7% 2% 7%;
+    margin-bottom: 40px;
+}
+
+/* -------------------- styling af undersider --------------- */
+
+/* Om mig */
+
+.imgOgText_bottom_section {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.text_box_underside {
+    background-color: #C0AE9D;
+    padding: 10%;
+    width: 60%;
+}
+
+.om_mig_img {
+    width: 70%;
+}
+
+.text_box_underside p {
+    padding: 2%;
+}
+
+.text_box_underside h2 {
+    padding: 2%;
+}
+
+.img_div {
+    padding: 0 10% 0 10%;
+}
+
+.img_div img{
+    width: 100%;
+}
+
+/* 1-1 coaching */
+
+.kontaktformular_section {
+    display: flex;
+    flex-direction: column;
+    background-color: #42332d00;
+}
+
+input {
+    display: block;
+}
+
+/* Hjemmetræning  */
+
+.iFrame_container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+   
+}
+
+iframe {
+    width: 80%; 
+    height: 600px;   
+}
+
+.overskrift {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 4%;
+    background-color: #C0AE9D;
+    margin: 0 7% 5% 7%;
+    animation: 1s slide-left;
+}
+
+.collapsible {
+    background-color: #C0AE9D;
+    color: #2D1F1A;
+    cursor: pointer;
+    padding: 18px;
+    width: 100%;
+    border: none;
+    text-align: left;
+    outline: none;
+    font-size: 15px;
+    
+  }
+  
+  .active, .collapsible:hover {
+    background-color: #c8b7a6;
+  }
+  
+  .content {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.2s ease-out;
+    background-color: #C0AE9D;
+    text-align: center;
+  }
+
+  .content h5 {
+    padding: 2%;
+  }
+
+  .dropdown {
+    display: flex;
+    margin-top: 5%;
+    flex-direction: column;
+    padding: 0 15% 0 15%;
+    align-self: center;
+  }
+
+/* -------------------- Styling af footer ------------------ */
+
+footer {
+    display: flex;
+    justify-content: space-between;
+    height: 300px;
+    background-color: #c0ae9d1f;
+}
+
+footer ul {
+    padding: 4%;
+    list-style-type: none;
+    line-height: 40px;
+    font-size: 15px;
+}
+
+.some_container {
+    width: 30%;
+    display: flex;
+    align-self: center;
+    justify-content: space-between;
+}
+
+.some_container img {
+    height: 50%;
+}
+
+.some_container a {
+    align-self: center;
+}
+
+.footer_placeholder li {
+    color: #c0ae9d00;
+}
+
+
+/* ------------------ Styling af tekst og knapper -------------------- */
+
+  h1 {
+    font-size: 600%;
+    font-weight: 100;
+  }
+
+  h2 {
+    font-size: 300%;
+  }
+
+  h3 {
+    font-size: 200%;
+  }
+
+  h4 {
+    font-size: 170%;
+  }
+
+  p {
+    font-size: 20px;
+  }
+
+  .btn {
+    background-color: #2D1F1A;
+    color: #ffffff;
+    padding: 2% 5% 2% 5%;
+    font-size: 20px;
+  }
+
+  .btn:hover {
+    background-color: #42332d;
+    transform: translateY(-4px);
+    transition: 0.3s ease-in;
+  }
+
+  .btn_kort:hover {
+    background-color: #42332d;
+    transform: translateY(-4px);
+    transition: 0.3s ease-in;
+  }
+
+  .text_box h2, p{
+    background-color: #C0AE9D;
+    padding: 7%;
+    margin: 0;
+    line-height: 30px;
+  }
+
+  .anbefalings_section p {
+    background-color:rgba(245, 245, 220, 0);
+  }
+
+  .text_box h2 {
+    margin-top: 7%;
+  }
+
+  .text_box p {
+    font-size: 15px;
+  }
+
+  .anbefalings_text h4 {
+    padding: 7%;
+    margin: 0;
+}
+
+.kort p {
+    background-color:rgba(245, 245, 220, 0);
+}
+
+  /* -----------  Media queary ------------- */
+  @media only screen and (max-width: 870px) {
+
+    /* --------- nav bar --------- */
+   .menupunkt {
+    display: none;
+   }
+
+   #logo {
+    
+    padding: 15%;
+    width: 70%;
+   }
+
+   nav {
+    justify-content: space-between;
+    padding: 2%;
+    width: 100%;
+   }
+
+   .hamburger {
+    display: block;
+    background-color: #42332d00;
+    z-index: 250;
+  }
+
+  .menu {
+    display: block;
+    z-index: 250;
+  }
+
+    #menu {
+        display: flex;
+        flex-direction: column;
+        background-color: #aca08500;
+        position: relative;
+        position: fixed;
+        text-align: right;
+        padding: 2%;
+        
+    }
+
+    #menu li {
+        list-style-type: none;
+        line-height: 30px;
+    }
+
+    /* --------- forside --------- */
+
+    #forside_landing {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    #forside_landing img {
+        margin-bottom: 10%;
+    }
+
+    #forside_landing div {
+        width: 100%;
+    }
+
+    .img_og_tekst-hoejre {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .img_og_tekst-hoejre img {
+        width: 80%;
+    }
+
+    .text_box h2{
+        text-align: center;
+    }
+
+   .anbefaling_profilbillede {
+    display: none;
+   }
+
+   .anbefaling_profilbillede_reverse {
+    display: none;
+   }
+
+    .kortholder {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .kort {
+        margin: 6% 0 6% 0 ;
+        width: 80%;
+        height: 33%;
+    }
+
+/* ------------- Undersider ----------- */
+
+/* Om mig */
+
+.img_div {
+    padding: 0 2% 0 2%;
+}
+
+/* ------------ Footer ------------- */
+    footer {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        height: auto;
+        padding: 10%;
+
+    }
+
+    .footer_list {
+        text-align: center;
+    }
+
+    .footer_placeholder {
+        display: none;
+    }
+
+    .some_container {
+        width: 70%;
+        margin-top: 10%;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .some_ikon {
+        width: 70%;
+    }
+
+
+    /* --------- tekst og knapper -------- */
+
+    h1 {
+        font-size: 400%;
+        margin-bottom: 10%;
+    }
+
+    p {
+        font-size: 15px;
+        margin-bottom: 15%;
+        
+    }
+
+    .btn {
+        margin-bottom: 10%;
+        font-size: 15px;
+        padding: 3% 10% 3% 10%;
+    }
+
+
+  }
+
+
+
